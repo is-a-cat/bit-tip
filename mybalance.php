@@ -8,6 +8,7 @@ $ubtc = $raw/100000;
 $nimg = round($ubtc/$max*24);
 //get the right image
 $img='http://bittip.net78.net/tip/'.$nimg.'.png';
+//set headers so it reads as an image
 header("Content-Type: image/png");
 readfile($img);
 ?>
