@@ -1,5 +1,5 @@
 //HTML bits
-document.getElementById("donate").innerHTML="<a href='http://chart.apis.google.com/chart?cht=qr&chs=400x400&chl=<script>document.write(address)</script>&chld=H|0' target='_blank'><img id='jar' src='http://bittip.net78.net/tip/0.png' width='50px'/></a><p class='speech'><a id='bit'>Loading	</a> donated so far.<a id='x'>X</a><a id='don'>Donate to:<br><span id='add'><input type='text' id='tb'  size='42px' onfocus='this.select()' onMouseUp='return false' value='"+address+"' /></a></span></p>";
+document.getElementById("donate").innerHTML="<a href='http://chart.apis.google.com/chart?cht=qr&chs=400x400&chl=<script>document.write(address)</script>&chld=H|0' target='_blank'><img id='jar' src='http://bittip.net78.net/tip/0.png' width='50px'/></a><p class='speech'><a id='bit'>Loading	</a> donated so far.<a id='don'>Donate to:<br><span id='add'><input type='text' id='tb'  size='42px' onfocus='this.select()' onMouseUp='return false' value='"+address+"' /></a></span></p>";
 //load Jquery externally.
 (function() {
   var jQuery;
@@ -27,17 +27,32 @@ document.getElementById("donate").innerHTML="<a href='http://chart.apis.google.c
     main(); 
   }
 //start jq
+var on=0;
 function main() { 
   jQuery(document).ready(function($) { 
+  	$(document).mouseup(function (e)
+{
+    var container = $(".speech");
+
+    if (container.has(e.target).length === 0)
+    {
+               $('.speech').fadeOut(500, function() {
+        
+       });
+       document.getElementById("jar").src="http://bittip.net78.net/tip/"+fill+".png";
+    }
+});
     		//load css
        $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'http://bittip.net78.net/bittip.css') );
     	//deal with the fades
       $('#jar').mouseover(function() {
+      	on=1;
         document.getElementById("jar").src="http://chart.apis.google.com/chart?cht=qr&chs=100x100&chl="+address+"&chld=H|0";
         $('.speech').fadeIn(500, function() {
         });
       });
       $('#x').click(function() {
+      	on=0;
        $('.speech').fadeOut(500, function() {
         
        });
