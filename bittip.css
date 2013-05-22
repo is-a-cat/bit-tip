@@ -1,0 +1,92 @@
+@import url();
+
+#jasr {
+	background-image:url("jar2/test.png");
+	width:126px;
+	height:175px;
+	background-size: contain;
+}
+#don {
+	position:absolute;
+		line-height: 15px;
+	bottom:3px;
+	left:6px;
+		font-size:80%;
+}
+#label {
+	width:80px;
+padding:3px;
+	text-align:center;
+	position:absolute;
+	top:90px;
+	left:28px;
+	background-color:#fff;
+}
+#qr {
+	position:absolute;
+	top:-10px;
+	right:10px;
+	opacity:0.2;
+filter:alpha(opacity=20); /* For IE8 and earlier */
+}
+#add {
+	color:#E0841B;
+		font-style:italic;
+	font-weight:550;
+
+}
+#foot {
+	position:absolute;
+	bottom:25px;
+	left:45px;
+	font-size: 90%;
+
+}
+#x {
+	position:absolute;
+	right:0px;
+	top:0px;
+		font-weight:900;
+		background-color:red;
+		width:15px;
+		padding-left:4px;
+		margin-right:0px;
+		border-width:0px 0px 1px 1px;
+		border-style:solid;
+}
+
+p.speech
+{
+	display:none;
+	position: relative;
+	left:65px;
+	width: 245px;
+//	top:0px;
+bottom:70px;
+	height: 55px;
+//	margin-left:30px;
+//	padding-left:7px;
+	font-size: 90%;
+	text-align: left;
+	line-height: 20px;
+	background-color: #fff;
+	border: 1px solid #666;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+	box-shadow: 2px 2px 4px #888;
+}
+p.speech:before
+{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 20px solid;
+	border-color: #666 transparent transparent #666;
+	top:18px; /* controls vertical position */
+	left:-12px; /* value = - border-left-width - border-right-width */
+	bottom:auto;
+	border-width:5px 12px 5px 0;
+	border-color:transparent #666;
+	
+}
